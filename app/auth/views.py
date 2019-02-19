@@ -3,6 +3,7 @@ from flask_login import login_user,logout_user,login_required
 from ..models import User
 from .forms import RegistrationForm
 from .. import db
+from . import auth
 from .forms import LoginForm,RegistrationForm
 
 @auth.route('/login')
@@ -18,9 +19,6 @@ def login():
 
     title = "Blog login"
     return render_template('templates/quotes.html',login_form = login_form,title=title )
-
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
 
 
 @auth.route('/register',methods = ["GET","POST"])
