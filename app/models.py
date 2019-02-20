@@ -47,9 +47,8 @@ class Role(db.Model):
 class Blog(db.Model):
     __tablename__ = 'blogs'
     id = db.Column(db.Integer,primary_key = True)
-    blog_title = db.Column(db.String)
-    blog_content = db.Column(db.String(1000))
-    category = db.Column(db.String(), nullable = False)
+    title = db.Column(db.String)
+    post = db.Column(db.String(1000))
     posted = db.Column(db.DateTime,default=datetime.utcnow)
     user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
     comments = db.relationship('Comment',backref =  'blog_id',lazy = "dynamic")
