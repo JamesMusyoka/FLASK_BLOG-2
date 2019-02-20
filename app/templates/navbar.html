@@ -7,30 +7,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">QUOTE</a>
+            <a class="navbar-brand" href="/index">QUOTE</a>
+                
+     
+                    <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+                    <a href="{{url_for('auth.login')}}">log in</a>
+                    <a href="{{url_for('auth.logout')}}">log out</a>
+                    <a href="{{url_for('main.new_blog')}}">add blog</a>
+           
+    
+
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <a href="/index">Home</a>
-            </ul>
+  
         </div>
         <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
-        {% block content %}{% endblock %}
-        <ul class="nav navbar-nav navbar-right">
-                {% if current_user.is_authenticated %}
-                <li><a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a></li>
-                <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
-                {% else %}
-                <li><a href="{{url_for('main.login')}}">Sign in</a></li>
-                {%endif%}
-              </ul>
+
 </div>
