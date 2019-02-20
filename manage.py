@@ -12,7 +12,7 @@ migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
 @manager.command
-def tests():
+def test():
    """Run the unit tests."""
    import unittest
    tests = unittest.TestLoader().discover('tests')
