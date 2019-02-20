@@ -1,4 +1,12 @@
 <div class="col-md-4">
-        {{ wtf.quick_form(review_form) }}
+        <form action="post">
+        <label>title</label>
+        <input type="text" id="title" palaceholder='title of this blog'>
+        <label>blog</label>
+        <input type="text" id="post" palaceholder='add your content'>
+        <button type="submit">submit post</button>
+
+        </form>
+      
         {{simplemde.load}}
 </div>
