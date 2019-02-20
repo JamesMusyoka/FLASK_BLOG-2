@@ -1,24 +1,26 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
+<!-- <a href="{{url_for('main.profile',uname=current_user.username)}}">Profile</a>
 <a href="{{url_for('auth.login')}}">log in</a>
 <a href="{{url_for('auth.logout')}}">log out</a>
-<a href="{{url_for('main.new_blog')}}">add blog</a>
+<a href="{{url_for('main.new_blog')}}">add blog</a> -->
 
 <div class="container-fluid">
            
       <h1>WELCOME TO JAHYMO MZITO BLOG_APP</h1>
+      <h2>Quotes</h2>
+    <h2>{{quote}}</h2>
+    <p>{{quote_author}}</p>
      
 </div>
 <style>
             h1{
                   text-align: center;
+                  color: red;
             }
             body{
                   height: 100%;
-                  background-image:url("https://img.freepik.com/free-vector/3d-geometric-shapes-background_23-2148064467.jpg?size=626&ext=jpg")
-      
-            }
+            }     
       </style>
 {% endblock%}

@@ -38,7 +38,7 @@ def index():
 
   
 
-   return render_template('quotes.html', title=title,quote = quote, quote_author = quote_author)
+   return render_template('index.html', title=title,quote = quote, quote_author = quote_author)
 
 
 
