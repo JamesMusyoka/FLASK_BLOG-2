@@ -91,7 +91,7 @@ def new_blog():
         return redirect(url_for('main.index'))
 
         title = 'New Blog'
-    return render_template('new_blog.html', legend = legend, title = title, blog_form = form)
+    return render_template('main/index.html', legend = legend, title = title, blog_form = form)
 
 @main.route('/blog/delete/<int:id>', methods = ['GET', 'POST'])
 @login_required
