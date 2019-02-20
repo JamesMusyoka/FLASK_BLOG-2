@@ -41,15 +41,6 @@ def index():
    return render_template('quotes.html', title=title,quote = quote, quote_author = quote_author)
 
 
-@main.route('/login')
-def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        flash('Login requested for user {}, remember_me={}'.format(
-            form.username.data, form.remember_me.data))
-        return redirect('index')
-    return render_template('auth/login.html', title='Sign In', form=form)
-
 
 @main.route('/user/<uname>')
 def profile(uname):
@@ -144,7 +135,7 @@ def user_blogs(uname):
      user = User.query.filter_by(username = uname).first()
      blogs = Blog.query.filter_by(user_id = user.id).all()
 
-     return render_template('profile/blogs.html', user = user, blogs = blogs)
+     return render_template('profile/profile.html', user = user, blogs = blogs)
 
 @main.route('/blogs/recent', methods = ['GET','POST'])
 def blogs():
