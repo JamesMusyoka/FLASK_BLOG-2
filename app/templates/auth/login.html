@@ -14,13 +14,28 @@
         </div>
       {% endfor %}
       <!-- Login form -->
-      <form action="">
-        <label >username</label>
-        <input type="email">
-        <label >Password</label>
+      <form method="POST">
+        {{login_form.csrf_token}}
+        <!-- <label >username</label>
         <input type="username">
+        <label >Password</label>
+        <input type="password">
         <button type="submit">log me in</button>
-        <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p>
+        <p> Don't have an account? <a href="{{url_for('auth.register')}}">Sign up here</a></p> -->
+
+        <p>Email</p>
+        {{login_form.email}}
+        <p>Password</p>
+        {{login_form.password}}
+        <br><br>
+        {{login_form.submit}}
+        <p>Don't have an account<a href="{{url_for('auth.register')}}">sign up</a></p>
+
+
+
+
+
+
       </form>
      
      </div>
