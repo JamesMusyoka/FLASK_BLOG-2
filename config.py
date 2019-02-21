@@ -3,9 +3,9 @@ import os
 class Config:
  
  
- SECRET_KEY = os.environ.get('SECRET_KEY') or 'you will-never-guess '
+ SECRET_KEY ='SECRET_KEY' or 'you will-never-guess '
  SQLALCHEMY_TRACK_MODIFICATIONS = False
- SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog'
+ SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog2'
  UPLOADED_PHOTOS_DEST ='app/static/photos'
  MAIL_SERVER = 'smtp.googlemail.com'
  MAIL_PORT = 587
@@ -21,10 +21,10 @@ class ProdConfig(Config):
 
 
 class TestConfig(Config):
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog_test'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog2_test'
 
 class DevConfig(Config):
-  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog'
+  SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringaschool:37472377@localhost/flaskblog2'
 
   DEBUG = True
 
