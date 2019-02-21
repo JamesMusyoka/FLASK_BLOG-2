@@ -114,7 +114,7 @@ def delete_comment(id):
 
 @main.route('/blog/<int:id>', methods = ["GET","POST"])
 def blog(id):
-    blog = Blog.get_blog(id)
+    blog = BlogForm(id)
     posted_date = blog.posted.strftime('%b %d, %Y')
 
     form = CommentForm()
@@ -128,7 +128,7 @@ def blog(id):
 
     comments = Comment.get_comments(blog)
 
-    return render_template('blog.html', blog = blog, comment_form = form,comments = comments, date = posted_date)
+    return render_template('blogs.html', blog = blog, comment_form = form,comments = comments, date = posted_date)
 
 @main.route('/user/<uname>/blogs', methods = ['GET','POST'])
 def user_blogs(uname):
